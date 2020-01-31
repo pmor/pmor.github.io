@@ -1,13 +1,23 @@
 .social-icon--link {
-  display: flex;
   padding: 3px;
-  width: 1.625rem;
+  width: 2.5rem;
   height: 4rem;
+  display: none;
+
+
+  @media screen and (min-width: 400px){
+    display: flex;
+  }
+
+
+  @media screen and (min-width: 768px){
+    width: 1.625rem;
+  }
+
 
   svg {
     width: 100%;
     fill: #fff;
-
   }
 
   &.github {
@@ -32,10 +42,6 @@
     }
   }
 
-}
-
-.visuallyHidden {
-  display: none;
 }
 
 .center-content {

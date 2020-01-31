@@ -12,10 +12,14 @@ social-icons:
 ---
 
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.title }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Montserrat:600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
 
@@ -29,14 +33,13 @@ social-icons:
     <header class='header'>
       <div class='container'>
         <a href='/'>
-          <img class='logo' src="/assets/images/logo.png">
+          <img class='logo' src="/assets/images/logo.png" alt='Code Creations'>
         </a>
         <div class='header-right'>
           <a class='nav-link' href='/contact'>Contact</a>
           {% for icon in layout.social-icons %}
-            <a class="social-icon--link {{ icon.class }}" href="{{ icon.url }}">
+            <a class="social-icon--link {{ icon.class }}" href="{{ icon.url }}" alt='{{ icon.title }}'>
               {% include {{ icon.class | prepend: 'social-icons/' | append: '.svg' }} %}
-              <span class="social-icon--title visuallyHidden">{{ icon.title }}</span>
             </a>
           {% endfor %}
         </div>
