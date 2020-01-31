@@ -1,0 +1,54 @@
+---
+social-icons:
+ - title: Upwork
+   url: https://www.upwork.com/o/profiles/users/~014caa4c6081be9476/
+   class: upwork
+ - title: GitHub
+   url: https://github.com/pmor
+   class: github
+ - title: LinkedIn
+   url: https://www.linkedin.com/in/pmoreira/
+   class: linkedin
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Montserrat:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  </head>
+  <body>
+    <header class='header'>
+      <div class='container'>
+        <a href='/'>
+          <img class='logo' src="/assets/images/logo.png">
+        </a>
+        <div class='header-right'>
+          <a class='nav-link' href='/contact'>Contact</a>
+          {% for icon in layout.social-icons %}
+            <a class="social-icon--link {{ icon.class }}" href="{{ icon.url }}">
+              {% include {{ icon.class | prepend: 'social-icons/' | append: '.svg' }} %}
+              <span class="social-icon--title visuallyHidden">{{ icon.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </header>
+    <main class='main'>
+      {{ content }}
+    </main>
+    <footer class='footer container'>
+      <small>
+        &copy; {{ 'now' | date: "%Y" }} Code Creations Unipessoal Lda.
+      </small>
+    </footer>
+  </body>
+</html>
